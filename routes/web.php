@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "Welcome";
 });
+
+Route::get('mydoctor','control@Home');
+
+Route::get('mydoctor/section/{name}','control@Sections');
+
+Route::get('mydoctor/contact-us','control@contact');
