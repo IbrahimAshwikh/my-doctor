@@ -11,12 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return "Welcome";
-});
 
-Route::get('mydoctor','control@Home');
+Route::get('mydoctor','SectionController@Home');  //show home page
 
-Route::get('mydoctor/section/{name}','control@Sections');
+Route::get('mydoctor/section/{name}','DoctorsController@Sections');  // section pages
 
-Route::get('mydoctor/contact-us','control@contact');
+Route::get('mydoctor/contact-us','control@contact');  // contact us page
+
+Route::get('/mydoctor/create-doctor','DoctorsController@create');  //show form to add new doctors to dataBase
+
+Route::post('mydoctor/','DoctorsController@store'); // store doctors-info in DataBase
+
+Route::get('/mydoctor/create-section','SectionController@create'); //  show form to add new section
+
+Route::post('mydoctor/sections','SectionController@store'); // store doctors-info in DataBase
+
+
+
+

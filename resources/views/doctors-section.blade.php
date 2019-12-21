@@ -47,113 +47,27 @@
 
     <div class="overlay"></div>
     <section class="specialist-area section-padding">
-        <h2 style="text-align: center; padding-bottom: 60px; margin-top: 0px;">Best Doctors For <strong style="color: #007bff;">{{ $name }}</strong></h2>
+        <h2 style="text-align: center; padding-bottom: 60px; margin-top: 0px;">Best Doctors For <strong style="color: #007bff;">{{ $section->department }}</strong></h2>
         <div class="container">
             <div class="row">
+                @foreach($doctors as $doctor)
+                @if( $section->id == $doctor->section)
                 <div class="col-lg-3 col-sm-6 mb-5 text-center">
                     <div class="single-doctor mb-4 mb-lg-0">
                         <div class="doctor-img">
-                            <img src="{{ asset('img/doctor1.jpg') }}" alt="" class="img-fluid">
+                            <img src="{{ asset(Storage::url($doctor->img)) }}" alt="Doctor Image" class="img-fluid">
                         </div>
                         <div class="content-area">
                             <div class="doctor-name text-center">
-                                <h3>D.Ahmed</h3>
-                                <h6>Hospital::Masara<br>Place::Aldhmany</h6>
+                                <h3>{{ $doctor->name }}</h3>
+                                <h6>Hospital::{{ $doctor->hospital }}<br>Place::{{ $doctor->place }}<br>Phone::{{ $doctor->phone }}</h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 mb-4 text-center">
-                    <div class="single-doctor mb-4 mb-lg-0">
-                        <div class="doctor-img">
-                            <img src="{{ asset('img/doctor2.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="content-area">
-                            <div class="doctor-name text-center">
-                                <h3>D.Mohamed</h3>
-                                <h6>Hospital::Soyol<br>Place::Aldhmany</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mb-4 text-center">
-                    <div class="single-doctor mb-4 mb-lg-0">
-                        <div class="doctor-img">
-                            <img src="{{ asset('img/doctor3.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="content-area">
-                            <div class="doctor-name text-center">
-                                <h3>D.Marim</h3>
-                                <h6>Hospital::Masara<br>Place::Aldhmany</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mb-4 text-center">
-                    <div class="single-doctor mb-4 mb-lg-0">
-                        <div class="doctor-img">
-                            <img src="{{ asset('img/doctor4.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="content-area">
-                            <div class="doctor-name text-center">
-                                <h3>D.Ibrahim</h3>
-                                <h6>Hospital::Tby<br>Place::Aldhmany</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mb-4 text-center">
-                    <div class="single-doctor mb-4 mb-lg-0">
-                        <div class="doctor-img">
-                            <img src="{{ asset('img/doctor1.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="content-area">
-                            <div class="doctor-name text-center">
-                                <h3>D.Hossen</h3>
-                                <h6>Hospital::Masara<br>Place::Aldhmany</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mb-4 text-center">
-                    <div class="single-doctor mb-4 mb-sm-0">
-                        <div class="doctor-img">
-                            <img src="{{ asset('img/doctor2.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="content-area">
-                            <div class="doctor-name text-center">
-                                <h3>D.Ahmed</h3>
-                                <h6>Hospital::Soyol<br>Place::Aldhmany</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mb-4 text-center">
-                    <div class="single-doctor mb-4 mb-sm-0">
-                        <div class="doctor-img">
-                            <img src="{{ asset('img/doctor3.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="content-area">
-                            <div class="doctor-name text-center">
-                                <h3>D.Ala</h3>
-                                <h6>Hospital::Masara<br>Place::Aldhmany</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mb-4 text-center">
-                    <div class="single-doctor mb-4 mb-sm-0">
-                        <div class="doctor-img">
-                            <img src="{{ asset('img/doctor4.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="content-area">
-                            <div class="doctor-name text-center">
-                                <h3>D.Lamin</h3>
-                                <h6>Hospital::Masara<br>Place::Aldhmany</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
+                @endforeach
+               
             </div>
         </div>
     </section>

@@ -5,19 +5,13 @@
     <title>MY DOCTOR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700" rel="stylesheet"> -->
     <link rel="stylesheet" href="{{ asset('css/css/bootstrap.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/css/animate.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('css/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/ionicons/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/css/slide.css') }}">
-    <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"> -->
+
 </head>
 
 <body>
@@ -59,7 +53,7 @@
             <div class="row no-gutters slider-text justify-content-center align-items-center">
                 <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
                     <div class="text text-center">
-                        <h1 class="mb-4">Find your doctor<br>We are here for you</h1>
+                        <h1 class="mb-4">Find your doctor<br></h1><h1>We are here for you</h1>
                         <!-- <p style="font-size: 18px;"></p> -->
                         <form action="#" class="search-location mt-md-5">
                             <div class="row justify-content-center">
@@ -95,118 +89,25 @@
             </div>
             <div class="row element-animate">
                 <div class="major-caousel js-carousel-2 owl-carousel">
+                    
+                @foreach($departments as $department)
                     <div>
                         <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/Orthopaedic"><img src="img/img_thumb_1.jpg" alt="Image Placeholder" class="img-fluid"></a>
+                            <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->department }}"><img src="{{ asset(Storage::url($department->img)) }}" alt="Image Placeholder" class="img-fluid"></a>
                             <div class="media-body">
 
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/Orthopaedic" class="text-black">Orthopaedic<br> Department</a></h3>
+                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->department }}" class="text-black">{{ $department->department }}<br> Department</a></h3>
                                 <p>Specialized Hospitals &amp; Doctors .</p>
                                 <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/Orthopaedic" class="float-left">Read more</a>
+                                    <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->department }}" class="float-left">Read more</a>
 
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/Neurosurgery"><img src="img/img_thumb_2.jpg" alt="Image Placeholder" class="img-fluid"></a>
-                            <div class="media-body">
+                @endforeach
 
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/Neurosurgery" class="text-black">Neurosurgery <br> Department </a></h3>
-                                <p>Specialized Hospitals &amp; Doctors .</p>
-                                <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/Neurosurgery" class="float-left">Read more</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/Oral & Dental"><img src="img/img_thumb_3.jpg" alt="Image Placeholder" class="img-fluid"></a>
-                            <div class="media-body">
-
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/Oral & Dental" class="text-black">Oral & Dental<br> Department</a></h3>
-                                <p>Specialized Hospitals &amp; Doctors .</p>
-                                <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/Oral & Dental" class="float-left">Read more</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/General Surgery"><img src="img/img_thumb_4.jpg" alt="Image Placeholder" class="img-fluid"></a>
-                            <div class="media-body">
-
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/General Surgery" class="text-black">General Surgery<br> Department</a></h3>
-                                <p>Specialized Hospitals &amp; Doctors .</p>
-                                <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/General Surgery" class="float-left">Read more</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/Geneeral Health"><img src="img/qaz.jpg" alt="Image Placeholder" class="img-fluid"></a>
-                            <div class="media-body">
-
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/Geneeral Health" class="text-black">General Health  Department</a></h3>
-                                <p>Specialized Hospitals &amp; Doctors .</p>
-                                <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/Geneeral Health" class="float-left">Read more</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/ENT"><img src="img/xyz.jpg" alt="Image Placeholder" class="img-fluid"></a>
-                            <div class="media-body">
-
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/ENT" class="text-black">ENT <br> Department</a></h3>
-                                <p>Specialized Hospitals &amp; Doctors .</p>
-                                <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/ENT" class="float-left">Read more</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/Ophthalmology"><img src="img/abc.jpg" alt="Image Placeholder" class="img-fluid"></a>
-                            <div class="media-body">
-
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/Ophthalmology" class="text-black">Ophthalmology Department</a></h3>
-                                <p>Specialized Hospitals &amp; Doctors .</p>
-                                <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/Ophthalmology" class="float-left">Read more</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/Dermatology"><img src="img/def.jpg" alt="Image Placeholder" class="img-fluid"></a>
-                            <div class="media-body">
-
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/Dermatology" class="text-black">Dermatology<br> Department</a></h3>
-                                <p>Specialized Hospitals &amp; Doctors .</p>
-                                <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/Dermatology" class="float-left">Read more</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
                 <!-- END slider -->
             </div>
@@ -214,7 +115,7 @@
     </section>
 
 
-
+ 
     <!-- slide end-->
     <section class="ftco-section ftco-no-pb">
         <div class="container">
@@ -245,11 +146,11 @@
             </div>
         </div>
     </section>
-    <br></br>
+    <br>
 
 
     <!-- footer -->
-    <footer id="footer">
+    <footer id="footer" style="background: linear-gradient(#2f7cc9, transparent);">
         <div class="top-footer">
             <div class="container">
                 <div class="row">
@@ -257,7 +158,7 @@
                         <div class="ftr-tle">
                             <h3 class="white" style="margin-left: 120px;"><b>AboutUs</b></h3>
                         </div>
-                        <div class="info-sec">
+                        <div class="info-sec" style="color: white;">
                             <p>MY DOCTOR website has created & designed by "Hyper Team" web developers to assist patients to obtain best/topspecialized doctors in every Libyan city through the website.</p>
                         </div>
                     </div>
@@ -267,10 +168,10 @@
                         </div>
                         <div class="info-sec">
                             <ul class="quick-info">
-                                <li class="li"><a href="http://localhost/my-doctor/public/mydoctor#"><i></i>Home</a></li>
-                                <li class="li"><a href="#service"><i></i>Departments</a></li>
-                                <li class="li"><a href="../ourteam/team.php"><i></i>About Us</a></li>
-                                <li class="li"><a href="http://localhost/my-doctor/public/mydoctor/contact-us"><i></i>Contact Us</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/my-doctor/public/mydoctor#" style="color: white;"><i></i>Home</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="#service" style="color: white;"><i></i>Departments</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="../ourteam/team.php" style="color: white;"><i></i>About Us</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" style="color: white;"><i></i>Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -280,9 +181,9 @@
                         </div>
                         <div class="info-sec">
                             <ul class="social-icon">
-                                <li class="oo">Libya, Tripoli, Tec Camp</li>
-                                <li class="oo">+218912345678</li>
-                                <li class="oo">Hyper-Team@gmail.com</li>
+                                <li class="oo" style="margin-left: 75px; color: white;">Libya, Tripoli, Tec Camp</li>
+                                <li class="oo" style="margin-left: 75px; color: white;">+218912345678</li>
+                                <li class="oo" style="margin-left: 75px; color: white;">Hyper-Team@gmail.com</li>
                             </ul>
                         </div>
                     </div>
@@ -292,7 +193,7 @@
         <div class="footer-line">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center" style="color: black;">
                         © Copyright Hyper Team. All Rights Reserved
                         <div class="credits">
                             Designed by::<a href="../ourteam/team.php">Hyper Team</a>
@@ -306,24 +207,18 @@
 
     <!-- loader -->
     <script src="{{ asset('js/js/jquery-3.2.1.min.js') }}"></script>
-    <!-- <script src="{{ asset('js/js/popper.min.js') }}"></script> -->
-    <!-- <script src="{{ asset('js/js/bootstrap.min.js') }}"></script> -->
+
     <script src="{{ asset('js/js/owl.carousel.min.js') }}"></script>
-    <!-- <script src="{{ asset('js/js/bootstrap-datepicker.js') }}"></script> -->
-    <!-- <script src="{{ asset('js/js/jquery.timepicker.min.js') }}"></script> -->
-    <!-- <script src="{{ asset('js/js/jquery.waypoints.min.js') }}"></script> -->
+   
     <script src="{{ asset('js/js/main.js') }}"></script>
 
 
-    <!-- <script src="{{ asset('js/jquery.min.js') }}"></script> -->
     <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <!-- <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script> -->
     <!--سهم الي ينزل -->
     <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
     <!--search-->
     <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
-    <!-- <script src="{{ asset('js/owl.carousel.min.js') }}"></script> -->
     <script src="{{ asset('js/aos.js') }}"></script>
     <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
     <script src="{{ asset('js/scrollax.min.js') }}"></script>

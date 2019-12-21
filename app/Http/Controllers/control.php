@@ -7,15 +7,6 @@ use Illuminate\Http\Request;
 class control extends Controller
 {
 
-    public function Home(){
-
-        return view('Mydoctor');
-    }
-
-    public function Sections($name){
-
-         return view('doctors-section')->with('name',$name); 
-    }
 
     public function contact(){
 

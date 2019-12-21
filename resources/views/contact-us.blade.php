@@ -74,9 +74,6 @@
                         <textarea class="area" placeholder="Leave a Message"></textarea>
                 </div>
 
-                <!-- <div class="submit">
-                       <a href="#" class="btn">Send Message</a>
-                </div> -->
             </div>
         </div>
         <div class="mouse">
