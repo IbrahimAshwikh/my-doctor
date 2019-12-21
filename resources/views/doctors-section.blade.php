@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="{{ asset('css/section-css/slidecss.css') }}">
     <link rel="stylesheet" href="{{ asset('css/section-css/bootstrap-4.1.3.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/section-css/animate.css') }}">
-    <!-- <link rel="stylesheet" href="css/ionicons.min.css"> -->
-    <!-- <link rel="stylesheet" href="css/icomoon.css"> -->
     <link rel="stylesheet" href="{{ asset('css/section-css/style.css') }}">
 </head>
 

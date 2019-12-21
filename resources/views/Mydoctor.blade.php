@@ -93,13 +93,13 @@
                 @foreach($departments as $department)
                     <div>
                         <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->department }}"><img src="{{ asset(Storage::url($department->img)) }}" alt="Image Placeholder" class="img-fluid"></a>
+                            <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->id }}"><img src="{{ asset(Storage::url($department->img)) }}" alt="Image Placeholder" class="img-fluid"></a>
                             <div class="media-body">
 
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->department }}" class="text-black">{{ $department->department }}<br> Department</a></h3>
+                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->id }}" class="text-black">{{ $department->department }}<br> Department</a></h3>
                                 <p>Specialized Hospitals &amp; Doctors .</p>
                                 <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->department }}" class="float-left">Read more</a>
+                                    <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->id }}" class="float-left">Read more</a>
 
                                 </p>
                             </div>

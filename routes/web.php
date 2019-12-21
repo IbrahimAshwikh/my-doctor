@@ -14,7 +14,7 @@
 
 Route::get('mydoctor','SectionController@Home');  //show home page
 
-Route::get('mydoctor/section/{name}','DoctorsController@Sections');  // section pages
+Route::get('mydoctor/section/{id}','DoctorsController@Sections');  // section pages
 
 Route::get('mydoctor/contact-us','control@contact');  // contact us page
 
