@@ -36,18 +36,10 @@
                     <li class="nav-item"><a href="http://localhost/my-doctor/public/mydoctor#" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Departments</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Medical Quotes</a></li>
-                    <li class="nav-item"><a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
-                            city
-                          </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Tripole</a>
-                            <a class="dropdown-item" href="#">Benghazi</a>
-                            <a class="dropdown-item" href="#">Misurata</a>
-                            <a class="dropdown-item" href="#">Zawya</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="../ourteam/team.php" class="nav-link">About Us</a></li>
+                    
+                    <li class="nav-item"><a href="http://localhost/hyper_team/public/hyperteam" class="nav-link">About Us</a></li>
                     <li class="nav-item active"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" class="nav-link">Contact Us</a></li>
+                   
                 </ul>
             </div>
         </div>
@@ -55,32 +47,39 @@
     <!-- END nav -->
 
 
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('{{ asset('img/blue-and-silver-stetoscope-40568.jpg') }}');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url('{{ asset('img/bg.jpg') }}') ;" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
-
+         <form action="  {{ url('/contact-us') }} " method="post">
+           @csrf
             <div class="containerr">
                  <h1>CONTACT US</h1>
                 <div class="login">
-                      <input type="text" name="" placeholder="Your Name" class="input">
-                      <input type="text" name="" placeholder="Your Email" class="input">
+                      <input type="text" name="name" placeholder="Your Name" class="input">
+                      <input type="text" name="Email" placeholder="Your Email" class="input">
                 </div>
 
                 <div class="supject">
-                         <input type="text"name="" placeholder="Subject" class="input">
+                         <input type="text"name="Subject" placeholder="Subject" class="input">
                 </div>
 
                 <div class="msg">
-                        <textarea class="area" placeholder="Leave a Message"></textarea>
+                        <textarea class="area"name="Message" placeholder="Leave a Message"></textarea>
                 </div>
 
+                <!-- <div class="submit">
+                       <a href="#" class="btn">Send Message</a>
+                </div> -->
+                <input type="submit" class="mouse-icon" value="Send">
+                </form>
             </div>
         </div>
-        <div class="mouse">
+        <!-- <div class="mouse">
             <a href="#" class="mouse-icon">
                 <div class="mouse-wheel" style="margin: 2px auto 10px 11px; font-size: 23px;"><span>Send</span></div>
             </a>
-        </div>
+            
+        </div> -->
     </div>
 
 
@@ -106,7 +105,7 @@
                             <ul class="quick-info">
                                 <li class="li"><a href="http://localhost/my-doctor/public/mydoctor#"><i></i>Home</a></li>
                                 <li class="li"><a href="#service"><i></i>Departments</a></li>
-                                <li class="li"><a href="../ourteam/team.php"><i></i>About Us</a></li>
+                                <li class="li"><a href="http://localhost/hyper_team/public/hyperteam"><i></i>About Us</a></li>
                                 <li class="li"><a href="http://localhost/my-doctor/public/mydoctor/contact-us"><i></i>Contact Us</a></li>
                             </ul>
                         </div>
@@ -132,7 +131,7 @@
                     <div class="col-md-12 text-center">
                         © Copyright Hyper Team. All Rights Reserved
                         <div class="credits">
-                            Designed by::<a href="../ourteam/team.php">Hyper Team</a>
+                            Designed by::<a href="http://localhost/hyper_team/public/hyperteam">Hyper Team</a>
                         </div>
                     </div>
                 </div>

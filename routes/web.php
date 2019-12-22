@@ -16,7 +16,8 @@ Route::get('mydoctor','SectionController@Home');  //show home page
 
 Route::get('mydoctor/section/{id}','DoctorsController@Sections');  // section pages
 
-Route::get('mydoctor/contact-us','control@contact');  // contact us page
+Route::get('/mydoctor/contact-us','ContactController@contactt');// contact us page
+Route::post('/contact-us','ContactController@storcontact');  
 
 Route::get('/mydoctor/create-doctor','DoctorsController@create');  //show form to add new doctors to dataBase
 
@@ -29,3 +30,7 @@ Route::post('mydoctor/sections','SectionController@store'); // store doctors-inf
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

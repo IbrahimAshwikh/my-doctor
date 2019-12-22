@@ -1,8 +1,3 @@
-body {
-    background: linear-gradient(#2f7cc9, transparent);
-    background-repeat: no-repeat;
-}
-
 .containerr {
     max-width: 800px;
     height: auto;
@@ -10,6 +5,7 @@ body {
     box-sizing: border-box;
     padding: 80px;
 }
+
 
 h1 {
     text-align: center;
@@ -33,6 +29,7 @@ h1 {
     outline: none;
     transition: all 0.5s;
 }
+
 
 .login .input {
     width: 48%;
@@ -75,8 +72,3 @@ h1 {
     color: #0575e6;
 }
 
-
-/* footer start*/
-
-
-/* footer end */

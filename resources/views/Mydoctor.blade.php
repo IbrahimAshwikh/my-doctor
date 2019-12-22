@@ -28,18 +28,9 @@
                     <li class="nav-item active"><a href="http://localhost/my-doctor/public/mydoctor#" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Departments</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Medical Quotes</a></li>
-                    <li class="nav-item"><a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
-                            city
-                          </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Tripole</a>
-                            <a class="dropdown-item" href="#">Benghazi</a>
-                            <a class="dropdown-item" href="#">Misurata</a>
-                            <a class="dropdown-item" href="#">Zawya</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="../ourteam/team.php" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="http://localhost/hyper_team/public/hyperteam" class="nav-link">About Us</a></li>
                     <li class="nav-item"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" class="nav-link">Contact Us</a></li>
+                   
                 </ul>
             </div>
         </div>
@@ -170,7 +161,7 @@
                             <ul class="quick-info">
                                 <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/my-doctor/public/mydoctor#" style="color: white;"><i></i>Home</a></li>
                                 <li class="li" style="margin-left: 95px; color: white;"><a href="#service" style="color: white;"><i></i>Departments</a></li>
-                                <li class="li" style="margin-left: 95px; color: white;"><a href="../ourteam/team.php" style="color: white;"><i></i>About Us</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/hyper_team/public/hyperteam" style="color: white;"><i></i>About Us</a></li>
                                 <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" style="color: white;"><i></i>Contact Us</a></li>
                             </ul>
                         </div>
@@ -196,7 +187,7 @@
                     <div class="col-md-12 text-center" style="color: black;">
                         © Copyright Hyper Team. All Rights Reserved
                         <div class="credits">
-                            Designed by::<a href="../ourteam/team.php">Hyper Team</a>
+                            Designed by::<a href="http://localhost/hyper_team/public/hyperteam">Hyper Team</a>
                         </div>
                     </div>
                 </div>

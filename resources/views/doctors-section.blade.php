@@ -24,18 +24,18 @@
                     <li class="nav-item active"><a href="http://localhost/my-doctor/public/mydoctor#" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Departments</a></li>
                     <li class="nav-item"><a href="" class="nav-link">Medical Quotes</a></li>
-                    <li class="nav-item"><a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+                    <li class="nav-item"><a href="http://localhost/hyper_team/public/hyperteam" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" class="nav-link">Contact Us</a></li>
+                     <li class="nav-item"><a class="nav-link dropdown-toggle " href="" id="navbardrop" data-toggle="dropdown">
                             city
                           </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu dropdown-menu-right"style="background: linear-gradient(#6caae9, transparent);">
                             <a class="dropdown-item" href="#">Tripole</a>
                             <a class="dropdown-item" href="#">Benghazi</a>
                             <a class="dropdown-item" href="#">Misurata</a>
                             <a class="dropdown-item" href="#">Zawya</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="../../ourteam/team.php" class="nav-link">About Us</a></li>
-                    <li class="nav-item"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" class="nav-link">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -93,7 +93,7 @@
                             <ul class="quick-info">
                                 <li class="li"><a href="http://localhost/my-doctor/public/mydoctor#"><i></i>Home</a></li>
                                 <li class="li"><a href="#service"><i></i>Departments</a></li>
-                                <li class="li"><a href="../ourteam/team.php"><i></i>About Us</a></li>
+                                <li class="li"><a href="http://localhost/hyper_team/public/hyperteam"><i></i>About Us</a></li>
                                 <li class="li"><a href="http://localhost/my-doctor/public/mydoctor/contact-us"><i></i>Contact Us</a></li>
                             </ul>
                         </div>
@@ -119,7 +119,7 @@
                     <div class="col-md-12 text-center">
                         © Copyright Hyper Team. All Rights Reserved
                         <div class="credits">
-                            Designed by::<a href="../ourteam/team.php">Hyper Team</a>
+                            Designed by::<a href="http://localhost/hyper_team/public/hyperteam">Hyper Team</a>
                         </div>
                     </div>
                 </div>

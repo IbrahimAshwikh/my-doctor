@@ -9,7 +9,7 @@
 
     </head>
 
-<body>
+<body style="background: linear-gradient(#2f7cc9, transparent);">
 <div class="containerr" style="margin-top: 150px;">
   <form action="{{ URL('/mydoctor/sections') }}" method="POST" enctype="multipart/form-data">
   @csrf 

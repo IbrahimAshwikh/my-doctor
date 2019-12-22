@@ -13,7 +13,7 @@
      </style>
     </head>
 
-<body>
+<body style="background: linear-gradient(#2f7cc9, transparent);">
 
 <div class="containerr" style="margin-top: 40px;">
   <form action="{{ URL('/mydoctor') }}" method="POST" enctype="multipart/form-data">
