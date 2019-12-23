@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <title>Add Doctor</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{ asset('css/contactus-css/contact-us.css') }}">
-     <style>
-          .input{
-               margin-bottom: 10px;
-          }
-     </style>
-    </head>
-
-<body style="background: linear-gradient(#2f7cc9, transparent);">
-
+@extends('layouts.doctors')
+@section('cont')
 <div class="containerr" style="margin-top: 40px;">
+
+@if ($errors->count())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
   <form action="{{ URL('/mydoctor') }}" method="POST" enctype="multipart/form-data">
   @csrf 
                 <h1 style="margin-bottom: 5px; margin-top: 10px;">Add Doctors</h1>
@@ -37,7 +33,4 @@
                 <input type="submit" class="btn" value="Add" style="margin-top: -5px;">
                 </div>
    </form>
-</div>
-
-</body>
-</html>
+   @endsection

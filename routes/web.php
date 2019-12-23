@@ -31,6 +31,13 @@ Route::post('mydoctor/sections','SectionController@store'); // store doctors-inf
 
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home/logout', 'HomeController@logout');
+
+
+// Customer Routes
+Route::get('/customer/login', 'Customer\AuthController@showLoginForm');
+Route::post('/customer/login', 'Customer\AuthController@login');
+Route::post('/customer/logout/mydoctor', 'Customer\AuthController@logoutt');

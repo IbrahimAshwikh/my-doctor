@@ -14,6 +14,13 @@ class ContactController extends Controller
   
       public function storcontact()
        {
+        request()->validate([
+          'name' => 'required',
+          'Email' => 'required',
+          'Subject' => 'required',
+          'Message' => 'required'
+      ]);
+
              $contact=new Contact;
              $contact->name= request('name');
              $contact->Email= request('Email');

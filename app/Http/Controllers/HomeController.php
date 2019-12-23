@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\section;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $departments = section::latest()->get();
+        //   return view('add-doctors',  ['departments'=>$departments]);
+        return view('Mydoctor', ['departments'=>$departments]);
+    }
+    
+    public function logout()
+    {
+        auth('web_customer')->logout();
+
+        return redirect('customer/login');
     }
 }

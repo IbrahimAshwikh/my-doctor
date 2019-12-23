@@ -8,6 +8,9 @@ use App\section;
 
 class DoctorsController extends Controller
 {
+
+
+
     public function Sections($id){
         
         $doctors = doctor::latest()->get();
