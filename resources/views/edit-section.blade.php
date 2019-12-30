@@ -1,6 +1,6 @@
 @extends('layouts.doctors')
 @section('title')
-   <title>Add Department</title>
+   <title>Edit Department</title>
 @endsection
  @section('content')
 <div class="containerr" style="margin-top: 150px;">
@@ -15,16 +15,20 @@
             </ul>
         </div>
     @endif
-  <form action="{{ URL('/mydoctor/sections') }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ url('section/' . $departments->id) }}" method="POST" enctype="multipart/form-data" style="margin-top: -100px;">
   @csrf 
-                <h1>Add Department</h1>
+  @method('PATCH')
+                <h1>Edit Department</h1>
                 <div class="login">
-                      <input type="text" name="department" placeholder="Department" class="input">
-                      <input type="text" name="department_ar" placeholder="القسم" class="input">
+                      <input type="text" name="department" placeholder="Department" class="input" value="{{ $departments->department }}">
+                      <input type="text" name="department_ar" placeholder="القسم" class="input" value="{{ $departments->department_ar }}">
                 </div>
                 <input type="file" name="img" class="input" style="background-color: white;">
+                 @if($departments->img)
+                     <img src="{{ asset(Storage::url($departments->img)) }}" alt="" width="200">
+                 @endif
                 <div class="submit" style="margin-top: -15px;">
-                <input type="submit" class="btn mt-3" value="Add">
+                <input type="submit" class="btn mt-3 input" value="Edit">
                 </div>
    </form>
 </div>

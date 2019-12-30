@@ -16,17 +16,66 @@ class SectionController extends Controller
   }
 
   public function store(){
-      request()->validate([
-          'department' => 'required',
-          'img' => 'required|image'
-      ]);
+    request()->validate($this->rule()); 
 
       $departments = new section;
       $departments->department =request('department');
+      $departments->department_ar =request('department_ar');
       $departments->img = request()->file('img')->store('public');
       $departments->save();
 
-      return redirect('/mydoctor');
+      return redirect()->route('department');
 
     }
+    public function department(){
+        return redirect('mydoctor#department');
+    }
+
+    public function edit($id){
+
+        $departments = section::find($id);    
+        return view('edit-section', [
+            'departments' => $departments
+            ]);
+     }
+
+     public function update($id){
+        request()->validate($this->rule()); 
+         
+        $departments = section::find($id);
+        if(request()->file('img')){
+            // remove prev img
+    
+    
+            // and store new one 
+            $newimagePath = request()->file('img')->store('public');
+    
+            $departments->img = str_replace('public', '', $newimagePath);
+        }
+    
+         $departments->department =request('department');
+         $departments->department_ar =request('department_ar');
+         $departments->save();
+    
+         return redirect()->route('department');
+    
+     } 
+
+     public function destroy($id)
+    {
+         section::find($id)->delete();
+
+         return redirect()->route('department');
+     }
+
+     private function rule()
+     {
+         return [
+            'department' => 'required',
+            'department_ar' => 'required',
+            'img' => 'required|image'
+         ];
+     }
+
+
 }

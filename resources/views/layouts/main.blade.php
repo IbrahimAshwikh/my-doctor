@@ -18,18 +18,18 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="http://localhost/my-doctor/public/mydoctor#">My Doctor</a>
+            <a class="navbar-brand" href="{{ route('page') }}">My Doctor</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="http://localhost/my-doctor/public/mydoctor#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Departments</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Medical Quotes</a></li>
+                    <li class="nav-item active"><a href="{{ route('page') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{ route('page') }}#department" class="nav-link">Departments</a></li>
+                    <li class="nav-item"><a href="{{ route('page') }}#Quotes" class="nav-link">Medical Quotes</a></li>
                     <li class="nav-item"><a href="http://localhost/hyper_team/public/hyperteam" class="nav-link">About Us</a></li>
-                    <li class="nav-item"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="{{ route('contactus') }}" class="nav-link">Contact Us</a></li>
           @guest
           <li class="nav-item">
               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -45,10 +45,11 @@
                   {{ Auth::user()->name }} <span class="caret"></span>
               </a>
 
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <ul>
-                 <li class="dropdown-item"><a href="http://localhost/my-doctor/public/mydoctor/create-doctor">Add Doctor</a></li>
-                <li class="dropdown-item"><a href="http://localhost/my-doctor/public/mydoctor/create-section">Add Department</a></li>
+              <div class="dropdown-menu dropdown-menu-right"style="background: linear-gradient(#6caae9, transparent); margin-left: 300px;">
+              <ul style="margin-left: -40px;">
+                 <li class="dropdown-item"><a href="{{ route('create-doctor') }}" style="color: black;">Add New Doctor+</a></li>
+                <li class="dropdown-item"><a href="{{ route('create-section') }}" style="color: black;">Add New Department+</a></li>
+                <li class="dropdown-item"><a href="{{ route('create-city') }}" style="color: black;">Add New City+</a></li>
 
                   <a class="dropdown-item" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
@@ -58,10 +59,10 @@
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
-                  </form>
-              </div>
-          </li>
-          </ul>
+                  </form>      
+              </ul>
+           </div>
+           </li>
       @endguest                   
 
                    
@@ -93,10 +94,10 @@
                         </div>
                         <div class="info-sec">
                             <ul class="quick-info">
-                                <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/my-doctor/public/mydoctor#" style="color: white;"><i></i>Home</a></li>
-                                <li class="li" style="margin-left: 95px; color: white;"><a href="#service" style="color: white;"><i></i>Departments</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="{{ route('page') }}" style="color: white;"><i></i>Home</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="{{ route('page') }}#department" style="color: white;"><i></i>Departments</a></li>
                                 <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/hyper_team/public/hyperteam" style="color: white;"><i></i>About Us</a></li>
-                                <li class="li" style="margin-left: 95px; color: white;"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" style="color: white;"><i></i>Contact Us</a></li>
+                                <li class="li" style="margin-left: 95px; color: white;"><a href="{{ route('contactus') }}" style="color: white;"><i></i>Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

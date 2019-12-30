@@ -9,32 +9,29 @@
     <link rel="stylesheet" href="{{ asset('css/section-css/bootstrap-4.1.3.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/section-css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('css/section-css/style.css') }}">
+    @yield('style')
 </head>
 
-<body>
+<body style="background-repeat: no-repeat !important;">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="http://localhost/my-doctor/public/mydoctor#">My Doctor</a>
+            <a class="navbar-brand" href="{{ route('page') }}">My Doctor</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu"></span> Menu
                   </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="http://localhost/my-doctor/public/mydoctor#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Departments</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Medical Quotes</a></li>
+                    <li class="nav-item"><a href="{{ route('page') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item  active"><a href="{{ route('page') }}#department" class="nav-link">Departments</a></li>
+                    <li class="nav-item"><a href="{{ route('page') }}#Quotes" class="nav-link">Medical Quotes</a></li>
                     <li class="nav-item"><a href="http://localhost/hyper_team/public/hyperteam" class="nav-link">About Us</a></li>
-                    <li class="nav-item"><a href="http://localhost/my-doctor/public/mydoctor/contact-us" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="{{ route('contactus') }}" class="nav-link">Contact Us</a></li>
                      <li class="nav-item"><a class="nav-link dropdown-toggle " href="" id="navbardrop" data-toggle="dropdown">
                             city
                           </a>
-                        <div class="dropdown-menu dropdown-menu-right"style="background: linear-gradient(#6caae9, transparent);">
-                            <a class="dropdown-item" href="#">Tripole</a>
-                            <a class="dropdown-item" href="#">Benghazi</a>
-                            <a class="dropdown-item" href="#">Misurata</a>
-                            <a class="dropdown-item" href="#">Zawya</a>
-                        </div>
+                    @yield('drop')
+
                     </li>
                 </ul>
             </div>
@@ -64,10 +61,10 @@
                         </div>
                         <div class="info-sec">
                             <ul class="quick-info">
-                                <li class="li"><a href="http://localhost/my-doctor/public/mydoctor#"><i></i>Home</a></li>
-                                <li class="li"><a href="#service"><i></i>Departments</a></li>
+                                <li class="li"><a href="{{ route('page') }}"><i></i>Home</a></li>
+                                <li class="li"><a href="{{ route('page') }}#department"><i></i>Departments</a></li>
                                 <li class="li"><a href="http://localhost/hyper_team/public/hyperteam"><i></i>About Us</a></li>
-                                <li class="li"><a href="http://localhost/my-doctor/public/mydoctor/contact-us"><i></i>Contact Us</a></li>
+                                <li class="li"><a href="{{ route('contactus') }}"><i></i>Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

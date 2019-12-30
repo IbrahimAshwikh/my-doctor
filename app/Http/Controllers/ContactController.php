@@ -17,8 +17,7 @@ class ContactController extends Controller
         request()->validate([
           'name' => 'required',
           'Email' => 'required',
-          'Subject' => 'required',
-          'Message' => 'required'
+          'Subject' => 'required'
       ]);
 
              $contact=new Contact;
@@ -27,7 +26,7 @@ class ContactController extends Controller
              $contact->Subject= request('Subject');
              $contact->Message= request('Message');
              $contact->save();
-             return view("contact-us");
+             return redirect()->route('page');
   
       }
 }

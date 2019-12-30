@@ -10,22 +10,42 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function(){
+    return redirect('mydoctor');
+});
+
+Route::get('mydoctor','SectionController@Home')->name('page');  //show home page
+
+Route::get('mydoctor/section/{id}/{id2?}','DoctorsController@Sections')->name('all');  // section pages
+
+Route::get('/mydoctor/contact-us','ContactController@contactt')->name('contactus');// contact us page
+
+Route::post('/contact-us','ContactController@storcontact');   //store  data form contact us to database
+
+Route::get('/mydoctor/create-doctor','DoctorsController@create')->name('create-doctor')->middleware('auth'); //show form to add new doctors to dataBase
+Route::get('/mydoctor/{id}/edit','DoctorsController@edit')->name('edit')->middleware('auth');  //to edit doctors info
+Route::patch('/mydoctor/{id}', 'DoctorsController@update')->middleware('auth');    //to store new data of doctor to data base
+Route::delete('/mydoctor/{id}', 'DoctorsController@destroy')->name('destroy')->middleware('auth');    //to delete doctor from database
 
 
-Route::get('mydoctor','SectionController@Home');  //show home page
+Route::post('/mydoctor','DoctorsController@store'); // store doctors-info in DataBase
 
-Route::get('mydoctor/section/{id}','DoctorsController@Sections');  // section pages
+Route::get('/mydoctor/create-section','SectionController@create')->name('create-section')->middleware('auth');  //  show form to add new section
+Route::get('/section/{id}/edit','SectionController@edit')->name('edit-section')->middleware('auth');  //to edit department info
+Route::patch('/section/{id}', 'SectionController@update')->middleware('auth');    //to store new data of departments to data base
+Route::delete('/section/{id}', 'SectionController@destroy')->name('destroy-section')->middleware('auth');    //to delete department from database
 
-Route::get('/mydoctor/contact-us','ContactController@contactt');// contact us page
-Route::post('/contact-us','ContactController@storcontact');  
-
-Route::get('/mydoctor/create-doctor','DoctorsController@create');  //show form to add new doctors to dataBase
-
-Route::post('mydoctor/','DoctorsController@store'); // store doctors-info in DataBase
-
-Route::get('/mydoctor/create-section','SectionController@create'); //  show form to add new section
 
 Route::post('mydoctor/sections','SectionController@store'); // store doctors-info in DataBase
+
+Route::get('mydoctor#department','SectionController@department')->name('department');
+
+Route::get('/mydoctor/create-city','CitiesController@create')->name('create-city')->middleware('auth');  //  show form to add new City
+Route::delete('/city/{id}/','CitiesController@destroy')->name('destroy-city')->middleware('auth');    //to delete city from database
+
+Route::post('/mydoctor/city','CitiesController@store'); // store cities-info in DataBase
+
+Route::post('/mydoctor/search','DoctorsController@search'); // search input filter 
 
 
 
@@ -34,10 +54,10 @@ Route::post('mydoctor/sections','SectionController@store'); // store doctors-inf
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/home/logout', 'HomeController@logout');
+// Route::post('/home/logout', 'HomeController@logout');
 
 
 // Customer Routes
 Route::get('/customer/login', 'Customer\AuthController@showLoginForm');
 Route::post('/customer/login', 'Customer\AuthController@login');
-Route::post('/customer/logout/mydoctor', 'Customer\AuthController@logoutt');
+Route::post('/customer/logout', 'Customer\AuthController@logoutt');

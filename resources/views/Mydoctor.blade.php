@@ -7,15 +7,16 @@
         <div class="container">
             <div class="row no-gutters slider-text justify-content-center align-items-center">
                 <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
-                    <div class="text text-center">
+                    <div class="text text-center pl-5">
                         <h1 class="mb-4">Find your doctor<br></h1><h1>We are here for you</h1>
                         <!-- <p style="font-size: 18px;"></p> -->
-                        <form action="#" class="search-location mt-md-5">
+                        <form action="{{ URL('/mydoctor/search') }}" method="POST" class="search-location mt-md-5">
+                         @csrf 
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 align-items-end">
                                     <div class="form-group">
                                         <div class="form-field">
-                                            <input type="text" class="form-control" placeholder="Search here....">
+                                            <input type="text" class="form-control" name="search" placeholder="Search here....">
                                             <button><span class="ion-ios-search"></span></button>
                                         </div>
                                     </div>
@@ -27,13 +28,14 @@
             </div>
         </div>
         <div class="mouse">
-            <a href="#" class="mouse-icon">
+            <a href="#department" class="mouse-icon">
                 <div class="mouse-wheel" style="margin: 2px auto 0; font-size: 30px;"><span class="ion-ios-arrow-down"></span></div>
             </a>
         </div>
     </div>
 
     <!-- slide start-->
+    <a name="department"></a>
     <section class="section bg-light">
         <div class="container">
             <div class="row justify-content-center mb-0 element-animate">
@@ -48,15 +50,24 @@
                 @foreach($departments as $department)
                     <div>
                         <div class="media d-block media-custom text-left">
-                            <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->id }}"><img src="{{ asset(Storage::url($department->img)) }}" alt="Image Placeholder" class="img-fluid"></a>
+                            <a href="{{ route('all',['id' => $department->id])}}"><img src="{{ asset(Storage::url($department->img)) }}" alt="Image Placeholder" class="img-fluid"></a>
                             <div class="media-body">
 
-                                <h3 class="mt-0 text-black"><a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->id }}" class="text-black">{{ $department->department }}<br> Department</a></h3>
+                                <h3 class="mt-0 text-black"><a href="{{ route('all',['id' => $department->id])}}" class="text-black">{{ $department->department }}<br> Department</a></h3>
                                 <p>Specialized Hospitals &amp; Doctors .</p>
                                 <p class="clearfix">
-                                    <a href="http://localhost/my-doctor/public/mydoctor/section/{{ $department->id }}" class="float-left">Read more</a>
-
+                                    <a href="{{ route('all',['id' => $department->id])}}" class="float-left" style="margin-top: -30px;">Read more</a><br>
                                 </p>
+                                @auth
+                                <a href="{{ route('edit-section', ['id'=>$department->id]) }}" class="btn btn-info" >Edit</a>
+                                <form action="{{ route('destroy-section',['id'=>$department->id]) }}" method="post" style="display: inline; padding-left: 100px;">
+                                        <input type="submit" value="Delete" class="btn btn-danger">
+                                         @csrf
+                                         @method('DELETE')
+                                </form>
+                                @endauth
+
+
                             </div>
                         </div>
                     </div>
@@ -72,6 +83,7 @@
 
  
     <!-- slide end-->
+    <a name="Quotes"></a>
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row no-gutters">
