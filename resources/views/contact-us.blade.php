@@ -23,22 +23,22 @@
         </div>
     @endif
             
-                 <h1 style="margin-top: -100px;">CONTACT US</h1>
-                 <h1 style="font-size: 25px !important; color: black !important; margin-top: -30px !important;">Tell us if you know any good doctors</h1>
+                 <h1 style="margin-top: -100px;">{{trans('main.con')}}</h1>
+                 <h1 style="font-size: 25px !important; color: black !important; margin-top: -30px !important;">{{trans('main.condes')}}</h1>
                 <div class="login">
-                      <input type="text" name="name" placeholder="Your Name" class="input">
-                      <input type="text" name="Email" placeholder="Your Email" class="input">
+                      <input type="text" name="name" placeholder="{{trans('main.name')}}" class="input">
+                      <input type="text" name="Email" placeholder="{{trans('main.email')}}" class="input">
                 </div>
 
                 <div class="supject">
-                         <input type="text"name="Subject" placeholder="Subject" class="input">
+                         <input type="text"name="Subject" placeholder="{{trans('main.subject')}}" class="input">
                 </div>
 
                 <div class="msg">
-                        <textarea class="area"name="Message" placeholder="Leave a Message"></textarea>
+                        <textarea class="area"name="Message" placeholder="{{trans('main.message')}}"></textarea>
                 </div>
 
-                <input type="submit" class="mouse-icon" value="Send">
+                <input type="submit" class="mouse-icon" value="{{trans('main.send')}}">
             </div>
             </form>
        </div>

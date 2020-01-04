@@ -1,6 +1,6 @@
 @extends('layouts.doctors')
 @section('title')
-   <title>Edit Department</title>
+   <title>{{trans('main.editdepartment')}}</title>
 @endsection
  @section('content')
 <div class="containerr" style="margin-top: 150px;">
@@ -18,7 +18,7 @@
   <form action="{{ url('section/' . $departments->id) }}" method="POST" enctype="multipart/form-data" style="margin-top: -100px;">
   @csrf 
   @method('PATCH')
-                <h1>Edit Department</h1>
+                <h1>{{trans('main.editdepartment')}}</h1>
                 <div class="login">
                       <input type="text" name="department" placeholder="Department" class="input" value="{{ $departments->department }}">
                       <input type="text" name="department_ar" placeholder="القسم" class="input" value="{{ $departments->department_ar }}">
@@ -28,7 +28,7 @@
                      <img src="{{ asset(Storage::url($departments->img)) }}" alt="" width="200">
                  @endif
                 <div class="submit" style="margin-top: -15px;">
-                <input type="submit" class="btn mt-3 input" value="Edit">
+                <input type="submit" class="btn mt-3" value="{{trans('main.edit')}}">
                 </div>
    </form>
 </div>

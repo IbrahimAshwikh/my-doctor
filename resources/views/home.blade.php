@@ -1,4 +1,4 @@
-@extends('layouts.doctors')
+@extends('layouts.app')
 @section('title')
     <title>logged in</title>
 @endsection
@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! - {{trans('main.main_dash')}}
                 </div>
             </div>
         </div>
