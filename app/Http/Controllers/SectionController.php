@@ -18,12 +18,15 @@ class SectionController extends Controller
   public function store(){
     request()->validate($this->rule()); 
 
+      $old = section::latest()->get();
       $departments = new section;
       $departments->department =request('department');
       $departments->department_ar =request('department_ar');
       $departments->img = request()->file('img')->store('public');
+      foreach($old as $olds){
+           if($departments->department == $olds->department || $departments->department_ar == $olds->department_ar)
+                 return redirect()->route('create-section');}
       $departments->save();
-
       return redirect()->route('department');
 
     }

@@ -46,6 +46,7 @@ class DoctorsController extends Controller
 
         request()->validate($this->rules());
 
+        $old = doctor::latest()->get();
         $doctors = new doctor;
         $doctors->name =request('name');
         $doctors->name_ar =request('name_ar');
@@ -58,8 +59,11 @@ class DoctorsController extends Controller
         $doctors->phone =request('phone');
         $doctors->description =request('description');
         $doctors->img = request()->file('img')->store('public');
-        $doctors->save();
+        foreach($old as $olds){
+            if($doctors->name == $olds->name || $doctors->name_ar == $olds->name_ar)
+                  return redirect()->route('create-doctor');}
 
+        $doctors->save();
         return redirect()->route('all',['id' => $doctors->section, 'id2' => '0']);
   }
   public function search()
