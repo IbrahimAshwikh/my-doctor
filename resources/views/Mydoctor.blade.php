@@ -51,8 +51,12 @@
                     <p class="mb-0 lead">{{trans('main.des')}}</p>
                 </div>
             </div>
-            <div class="row element-animate">
-                <div class="major-caousel js-carousel-2 owl-carousel">
+            @if ( app()->getLocale() == 'ar')
+               <div class="row element-animate" style="direction: ltr;">
+            @else
+                <div class="row element-animate">
+            @endif
+                  <div class="major-caousel js-carousel-2 owl-carousel">
                     
                 @foreach($departments as $department)
                     <div>
@@ -76,19 +80,11 @@
                                 </p>
                                 @auth
                                 <a href="{{ route('edit-section', ['id'=>$department->id]) }}" class="btn btn-info" >{{trans('main.edit')}}</a>
-                            @if ( app()->getLocale() == 'ar')
-                                <form action="{{ route('destroy-section',['id'=>$department->id]) }}" method="post" style="display: inline; padding-right: 100px;">
-                                        <input type="submit" value="{{trans('main.delete')}}" class="btn btn-danger">
-                                         @csrf
-                                         @method('DELETE')
-                                </form>
-                            @else
                                 <form action="{{ route('destroy-section',['id'=>$department->id]) }}" method="post" style="display: inline; padding-left: 100px;">
                                         <input type="submit" value="{{trans('main.delete')}}" class="btn btn-danger">
                                          @csrf
                                          @method('DELETE')
                                 </form>
-                            @endif
                                 @endauth
 
 
