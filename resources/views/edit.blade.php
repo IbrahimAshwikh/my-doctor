@@ -29,12 +29,20 @@
                 </div>
                 <select name="section" class="input">
                       @foreach ($departments as $department)
+                        @if ( app()->getLocale() == 'ar')
+                          <option {{ $department->id == $doctor->section ? 'selected' : ''}} value="{{ $department->id }}"> {{ $department->department_ar }} </option>
+                        @else
                           <option {{ $department->id == $doctor->section ? 'selected' : ''}} value="{{ $department->id }}"> {{ $department->department }} </option>
+                        @endif
                       @endforeach
                 </select>
                 <select name="city" class="input">
                       @foreach ($cities as $city)
+                        @if ( app()->getLocale() == 'ar')
+                          <option {{ $city->id == $doctor->city ? 'selected' : '' }} value="{{ $city->id }}"> {{ $city->city_ar }} </option>
+                        @else
                           <option {{ $city->id == $doctor->city ? 'selected' : '' }} value="{{ $city->id }}"> {{ $city->city }} </option>
+                        @endif
                       @endforeach
                 </select>
                 <div class="login">

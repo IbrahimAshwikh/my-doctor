@@ -28,7 +28,7 @@ return[
     'delete'=>'Delete',
     'menu'=>'Menu',
     'con'=>'CONTACT US',
-    'condes'=>'Tell us if you know any good doctors',
+    'condes'=>'Please inform us if you know any better doctors',
     'name'=>'Your Name',
     'email'=>'Your E-mail',
     'subject'=>'Subject',
