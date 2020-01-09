@@ -18,21 +18,22 @@
 <body style="background-repeat: no-repeat !important;">
     @if ( app()->getLocale() == 'ar')
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light text-right" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light text-right" style="margin-right: -10px;" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" style="font-size: 30px; margin: -7px 0px;" href="{{ route('page') }}">{{trans('main.main_mydoctor')}}</a>
+            <a class="navbar-brand" style="font-size: 35px; margin-right: 10px !important; margin: -7px 0px;" href="{{ route('page') }}">{{trans('main.main_mydoctor')}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="oi oi-menu" style="font-size: 23px; padding-top: 15px;"></span>{{trans('main.menu')}}
                   </button>
 
+
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a style="font-size: 20px;" href="{{ route('page') }}" class="nav-link">{{trans('main.main_home')}}</a></li>
-                    <li class="nav-item  active"><a style="font-size: 20px;" href="{{ route('page') }}#department" class="nav-link">{{trans('main.main_department')}}</a></li>
-                    <li class="nav-item"><a style="font-size: 20px;" href="{{ route('page') }}#Quotes" class="nav-link">{{trans('main.main_q')}}</a></li>
-                    <li class="nav-item"><a style="font-size: 20px;" href="http://localhost/hyper_team/public/hyperteam" class="nav-link">{{trans('main.main_about')}}</a></li>
-                    <li class="nav-item"><a style="font-size: 20px;" href="{{ route('contactus') }}" class="nav-link">{{trans('main.main_contact')}}</a></li>
-                     <li class="nav-item"><a style="font-size: 20px;" class="nav-link dropdown-toggle " href="" id="navbardrop" data-toggle="dropdown">
+                    <li class="nav-item"><a style="font-size: 25px;" href="{{ route('page') }}" class="nav-link">{{trans('main.main_home')}}</a></li>
+                    <li class="nav-item  active"><a style="font-size: 25px;" href="{{ route('page') }}#department" class="nav-link">{{trans('main.main_department')}}</a></li>
+                    <li class="nav-item"><a style="font-size: 25px;" href="{{ route('page') }}#Quotes" class="nav-link">{{trans('main.main_q')}}</a></li>
+                    <li class="nav-item"><a style="font-size: 25px;" href="http://localhost/hyper_team/public/hyperteam" class="nav-link">{{trans('main.main_about')}}</a></li>
+                    <li class="nav-item"><a style="font-size: 25px;" href="{{ route('contactus') }}" class="nav-link">{{trans('main.main_contact')}}</a></li>
+                     <li class="nav-item"><a style="font-size: 25px;" class="nav-link dropdown-toggle " href="" id="navbardrop" data-toggle="dropdown">
                             {{trans('main.city')}}
                           </a>
                     @yield('drop')
@@ -43,6 +44,7 @@
         </div>
     </nav>
     <!-- END nav -->
+
     @else
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
