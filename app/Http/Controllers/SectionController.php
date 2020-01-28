@@ -23,6 +23,7 @@ class SectionController extends Controller
       $departments->department =request('department');
       $departments->department_ar =request('department_ar');
       $departments->img = request()->file('img')->store('public');
+      $departments->img = str_replace('public', '', $departments->img);
       foreach($old as $olds){
            if($departments->department == $olds->department || $departments->department_ar == $olds->department_ar)
                  return redirect()->route('create-section');}
