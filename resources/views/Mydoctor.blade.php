@@ -103,13 +103,14 @@
 
  
     <!-- slide end-->
+    
     <a name="Quotes"></a>
     <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row no-gutters">
                   @if ( app()->getLocale() == 'ar')
 
-                    <div class="col-md-6 p-md-5 img d-flex justify-content-center align-items-center" style="background-image: url(img/bbgg.jpg);">
+                    <div class="col-md-6 p-md-5 img d-flex justify-content-center align-items-center" style="background-image: url(img/bbgg.jpg) ;">
                     </div>
                     <div class="col-md-6 wrap-about py-md-5 ftco-animate text-right">                   
                     <div class="heading-section p-md-5">
@@ -162,4 +163,6 @@
         </div>
     </section>
     <br>
+   
+
   @endsection

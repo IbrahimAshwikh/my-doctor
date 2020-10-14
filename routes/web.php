@@ -64,7 +64,7 @@ Route::group(['middleware'=>'Lang'], function(){
     Route::get('/customer/login', 'Customer\AuthController@showLoginForm');
     Route::post('/customer/login', 'Customer\AuthController@login');
     Route::post('/customer/logout', 'Customer\AuthController@logoutt');
-    Auth::routes(['register' => false]);
+    Auth::routes(['register' =>false]);
     Route::get('/home', 'HomeController@index')->name('home');
 
 
